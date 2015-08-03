@@ -1,9 +1,9 @@
 # ot-hapi-health
 > Health plugin for Hapi
 
-[![Build Status](https://semaphoreci.com/api/v1/projects/cc93e0df-4124-4a48-914a-4a83e42c4aeb/386191/badge.svg)](https://semaphoreci.com/ArnoldZokas/ot-hapi-service-status)[![Dependency Status](https://david-dm.org/ArnoldZokas/ot-hapi-service-status.svg)](https://david-dm.org/ArnoldZokas/ot-hapi-service-status) [![NPM version](https://badge.fury.io/js/ot-hapi-service-status.svg)](http://badge.fury.io/js/ot-hapi-service-status)
+[![Build Status](https://semaphoreci.com/api/v1/projects/108544aa-8e03-41b1-83d9-b70289833db4/501053/badge.svg)](https://semaphoreci.com/ArnoldZokas/ot-hapi-health)[![Dependency Status](https://david-dm.org/ArnoldZokas/ot-hapi-health.svg)](https://david-dm.org/ArnoldZokas/ot-hapi-health) [![NPM version](https://badge.fury.io/js/ot-hapi-health.svg)](http://badge.fury.io/js/ot-hapi-health)
 
-[![NPM](https://nodei.co/npm/ot-hapi-service-status.png?downloads=true&stars=true)](https://nodei.co/npm/ot-hapi-service-status)
+[![NPM](https://nodei.co/npm/ot-hapi-health.png?downloads=true&stars=true)](https://nodei.co/npm/ot-hapi-health)
 
 ## Usage
 ```
