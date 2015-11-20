@@ -4,8 +4,7 @@ var expect = require('expect.js'),
     plugin = require('../index.js');
 
 describe('/health', function() {
-    var contentType,
-        payload,
+    var payload,
         statusCode;
 
     before(function(done) {
