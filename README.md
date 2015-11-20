@@ -5,6 +5,19 @@
 
 [![NPM](https://nodei.co/npm/ot-hapi-health.png?downloads=true&stars=true)](https://nodei.co/npm/ot-hapi-health)
 
+## Overview
+Defines `/health` endpoint:
+```
+GET /health
+Host: yourhost.com
+
+HTTP/1.1 200 OK
+content-type: text/html; charset=utf-8
+cache-control: no-cache
+
+☃
+```
+
 ## Usage
 ```
 $ npm i ot-hapi-health --save
