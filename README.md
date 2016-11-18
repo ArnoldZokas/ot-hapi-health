@@ -30,7 +30,7 @@ server.connection({ port: 3000 });
 server.register({
     plugin: require('ot-hapi-health'),
     options: {
-    	ready: cb => cb(true) // Optional async validator to establish app readiness
+    	isHealthy: cb => cb(true) // Optional async validator to establish app readiness
 	}
 }, function(err) {
     if (err) {
