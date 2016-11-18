@@ -3,4 +3,3 @@ test
 .editorconfig
 .eslintrc
 .travis.yml
-gruntfile.js
