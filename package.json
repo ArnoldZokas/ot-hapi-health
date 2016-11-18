@@ -19,7 +19,9 @@
     "url": "https://github.com/ArnoldZokas/ot-hapi-health/issues"
   },
   "homepage": "https://github.com/ArnoldZokas/ot-hapi-health",
-  "dependencies": {},
+  "dependencies": {
+    "joi": "^10.0.0"
+  },
   "devDependencies": {
     "eslint": "^3.10.2",
     "expect.js": "0.3.1",
