@@ -56,7 +56,7 @@ describe('/health', function() {
             };
 
             plugin.register(server, {
-                ready: function(cb) {
+                isHealthy: function(cb) {
                     cb(false);
                 }
             }, done);
@@ -67,11 +67,11 @@ describe('/health', function() {
         });
 
         it('should return payload with overall status faulting', function() {
-            expect(payload).to.equal('⌛');
+            expect(payload).to.equal('💩');
         });
     });
 
-    describe('when ready handler provided and healthy', function() {
+    describe('when isHealthy handler provided and healthy', function() {
         var payload,
             statusCode;
 
@@ -91,7 +91,7 @@ describe('/health', function() {
             };
 
             plugin.register(server, {
-                ready: function(cb) {
+                isHealthy: function(cb) {
                     cb(true);
                 }
             }, done);

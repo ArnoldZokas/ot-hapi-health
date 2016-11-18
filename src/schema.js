@@ -3,5 +3,5 @@
 var joi = require('joi');
 
 module.exports = {
-  ready: joi.func()
+  isHealthy: joi.func()
 };

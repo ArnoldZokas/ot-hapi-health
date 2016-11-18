@@ -15,7 +15,7 @@ describe('plugin registration', function() {
                 }
             };
 
-            plugin.register(server, { monitors: [] }, done);
+            plugin.register(server, {}, done);
         });
 
         it('should define "health" route', function() {
@@ -55,8 +55,7 @@ describe('plugin registration', function() {
                 };
 
                 plugin.register(server, {
-                    monitors: [],
-                    ready: 'not a function'
+                    isHealthy: 'not a function'
                 }, function(err) {
                     error = err;
                     done();
@@ -65,7 +64,7 @@ describe('plugin registration', function() {
 
             it('should throw an error', function() {
                 expect(error.message).to.equal('config validation error');
-                expect(error.inner.message).to.contain('"ready" must be a Function');
+                expect(error.inner.message).to.contain('"isHealthy" must be a Function');
             });
         });
     });

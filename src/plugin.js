@@ -3,6 +3,9 @@
 var joi = require('joi');
 var schema = require('./schema');
 
+var success = { code: 200, response: '☃' };
+var fail = { code: 500, response: '💩' };
+
 exports.register = function(plugin, options, next) {
 
     var config = options || {},
@@ -20,15 +23,12 @@ exports.register = function(plugin, options, next) {
             path: '/health',
             handler: function(req, reply) {
 
-                var success = { code: 200, response: '☃' },
-                    fail = { code: 500, response: '⌛' };
-
-                if(!config.ready) {
+                if(!config.isHealthy) {
                     return reply(success.response).code(success.code);
                 }
 
-                config.ready(function(ready) {
-                    var outcome = ready ? success : fail;
+                config.isHealthy(function(healthy) {
+                    var outcome = healthy ? success : fail;
                     reply(outcome.response).code(outcome.code);
                 });
             },
