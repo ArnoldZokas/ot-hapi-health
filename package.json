@@ -4,7 +4,7 @@
   "description": "Health plugin for Hapi",
   "main": "index.js",
   "scripts": {
-    "test": "grunt && mocha --reporter spec --timeout 5s"
+    "test": "eslint ./ && mocha --reporter spec --timeout 5s"
   },
   "repository": {
     "type": "git",
@@ -23,10 +23,8 @@
     "joi": "^10.0.0"
   },
   "devDependencies": {
+    "eslint": "^3.10.2",
     "expect.js": "0.3.1",
-    "grunt": "1.0.1",
-    "grunt-cli": "1.2.0",
-    "grunt-eslint": "18.0.0",
-    "time-grunt": "1.3.0"
+    "mocha": "^3.1.2"
   }
 }
