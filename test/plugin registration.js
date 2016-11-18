@@ -5,7 +5,7 @@ var expect = require('expect.js'),
 
 describe('plugin registration', function() {
 
-    describe('happy path', function(){
+    describe('happy path', function() {
         var registeredRoutes;
 
         before(function(done) {
@@ -43,31 +43,29 @@ describe('plugin registration', function() {
         });
     });
 
-    describe('when registering with validate handler', function(){
+    describe('when registering with ready handler', function() {
 
-        describe('when handler is not a valid function', function(){
+        describe('when handler is not a valid function', function() {
 
-            var registeredRoutes, error;
+            var error;
 
             before(function(done) {
                 var server = {
-                    route: function(routes) {
-                        registeredRoutes = routes;
-                    }
+                    route: function() {}
                 };
 
                 plugin.register(server, {
                     monitors: [],
-                    validate: 'not a function'
-                }, function(err){
+                    ready: 'not a function'
+                }, function(err) {
                     error = err;
                     done();
                 });
             });
 
-            it('should throw an error', function(){
+            it('should throw an error', function() {
                 expect(error.message).to.equal('config validation error');
-                expect(error.inner.message).to.contain('"validate" must be a Function');
+                expect(error.inner.message).to.contain('"ready" must be a Function');
             });
         });
     });

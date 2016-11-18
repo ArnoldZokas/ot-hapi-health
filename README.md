@@ -27,9 +27,12 @@ $ npm i ot-hapi-health --save
 var server = new (require('hapi').Server)();
 server.connection({ port: 3000 });
 
-server.register([
-    require('ot-hapi-health')
-], function(err) {
+server.register({
+    plugin: require('ot-hapi-health'),
+    options: {
+    	ready: cb => cb(true) // Optional async validator to establish app readiness
+	}
+}, function(err) {
     if (err) {
         console.error('Failed to load plugin:', err);
     }

@@ -5,7 +5,7 @@ var expect = require('expect.js'),
 
 describe('/health', function() {
 
-    describe('happy path', function(){
+    describe('happy path', function() {
         var payload,
             statusCode;
 
@@ -36,7 +36,7 @@ describe('/health', function() {
         });
     });
 
-    describe('when not healthy', function(){
+    describe('when not healthy', function() {
         var payload,
             statusCode;
 
@@ -56,7 +56,7 @@ describe('/health', function() {
             };
 
             plugin.register(server, {
-                validate: function(cb){
+                ready: function(cb) {
                     cb(false);
                 }
             }, done);
@@ -71,7 +71,7 @@ describe('/health', function() {
         });
     });
 
-    describe('when validate handler provided and healthy', function(){
+    describe('when ready handler provided and healthy', function() {
         var payload,
             statusCode;
 
@@ -91,7 +91,7 @@ describe('/health', function() {
             };
 
             plugin.register(server, {
-                validate: function(cb){
+                ready: function(cb) {
                     cb(true);
                 }
             }, done);
