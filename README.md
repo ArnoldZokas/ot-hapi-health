@@ -19,18 +19,18 @@ cache-control: no-cache
 ```
 
 ## Usage
-```
+```sh
 $ npm i ot-hapi-health --save
 ```
 
-```
+```js
 var server = new (require('hapi').Server)();
 server.connection({ port: 3000 });
 
 server.register({
     plugin: require('ot-hapi-health'),
     options: {
-    	isHealthy: cb => cb(true) // Optional async validator to establish app readiness
+    	isHealthy: cb => cb(true) // optional async validator to establish app readiness
 	}
 }, function(err) {
     if (err) {
@@ -42,5 +42,7 @@ server.register({
 ```
 
 ## Release History
+- **v1.0.1** (2016-11-18)
+    - added optional `isHealthy` validator to establish app readiness
 - **v1.0.0** (2015-08-03)
     - initial release
